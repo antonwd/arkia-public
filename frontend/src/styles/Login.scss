@@ -1,0 +1,140 @@
+.Login {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url("../assets/images/login_background.jpg") no-repeat fixed right;
+    font-family: Heebo;
+
+    .box {
+        width: 50%;
+        height: auto;
+        background:rgba(255,255,255,0.65);
+        backdrop-filter: blur(15px);
+        border-radius: 25px;
+        box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.16);
+        display: flex;
+        flex-direction: column;
+
+        @media screen and (max-width: 760px) {
+            width: 100%;
+            border-radius: 0;
+        }
+
+        .errorOccured {
+            width: auto;
+            margin: auto;
+            padding: 3px 10px;
+            color: #c13c00;
+            font-weight: bold;
+            border-right: 5px solid #c12c00;
+        }
+        
+        .title {
+            width: 100%;
+            text-align: center;
+            padding-top: 30px;
+            font-size: 35px;
+            line-height: 35px;
+            font-weight: 700;
+            color: #064c66;
+            padding-bottom: 20px;
+        }
+
+        .loginForm {
+            width: 75%;
+            margin: auto;
+            padding-bottom: 35px;
+
+            input {
+                width: 100%;
+                height: 37px;
+                border: 1px solid #65BBDB;
+                border-radius: 10px;
+                font-size: 18px;
+                margin: 10px 0;
+                font-family: Heebo;
+                text-align: center;
+            }
+            .submitButton {
+                background: #65BBDB;
+                color: #fff;
+                width: 100%;
+                padding: 10px 25px;
+                font-size: 18px;
+                line-height: 35px;
+                font-weight: bold;
+                border: none;
+                border-radius: 10px;
+                text-align: center;
+                cursor: pointer;
+                transition: all 0.35s ease-in-out;
+                &:hover {
+                    background: #218CB4;
+                }
+            }
+            .rememberMe {
+                text-align: right;
+                .rememberCheckBox {
+                    display: block;
+                    position: relative;
+                    padding-right: 30px;
+                    margin-bottom: 12px;
+                    cursor: pointer;
+                    font-size: 18px;
+                    -webkit-user-select: none;
+                    -moz-user-select: none;
+                    -ms-user-select: none;
+                    user-select: none;
+
+                    input {
+                        position: absolute;
+                        opacity: 0;
+                        cursor: pointer;
+                        height: 0;
+                        width: 0;
+                        &:checked {
+                            ~ .checkmark {
+                                border: 1px solid #0B6A8E;
+                            }
+                            ~ .checkmark:after {
+                                display: block;
+                            }
+                        }
+                    }
+                    .checkmark {
+                        position: absolute;
+                        top: 2px;
+                        right: 0;
+                        height: 20px;
+                        width: 20px;
+                        background-color: #fff;
+                        border: 1px solid #65BBDB;
+                        border-radius: 7px;
+                        &:after {
+                            content: "";
+                            position: absolute;
+                            display: none;
+                            left: 25%;
+                            top: 10%;
+                            width: 5px;
+                            height: 8px;
+                            border: solid #0B6A8E;
+                            border-width: 0 3px 3px 0;
+                            -webkit-transform: rotate(45deg);
+                            -ms-transform: rotate(45deg);
+                            transform: rotate(45deg);
+                        }
+                    }
+                    
+                    &:hover {
+                        input ~ .checkmark {
+                            border: 2px solid #0B6A8E;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

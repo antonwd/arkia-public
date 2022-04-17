@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    font-family: 'Heebo', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    box-sizing: border-box;
+    direction: rtl;
+  }
+  
+  body {
+    background: #F2F6F7;
+    height: 100%;
+  }
+  
+  .mainFrame {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+
+    .rightMenu {
+      background: #fff;
+      height: 100vh;
+      position: fixed;
+      z-index: 100;
+
+      @media screen and (min-width: 768px) {
+        position: relative;
+      }
+
+      @media screen and (min-width: 1366px) {
+        width: 340px;
+      }
+    }
+
+    .mainContent {
+      padding-right: 44px;
+      height: 100vh;
+      overflow: scroll;
+      width: inherit;
+
+      @media screen and(min-width: 768px) {
+        padding-right: 0;
+      }
+
+      .pageGrid {
+        display: flex;
+        flex-direction: column;
+
+        @media screen and (min-width: 768px) {
+          flex-direction: row;
+        }
+
+        @media screen and (min-width: 768px) {
+          .mainPage {
+            flex: 75%;
+          }
+        }
+      }
+
+      .leftBlock {
+        padding: 30px 25px;
+
+        @media screen and (min-width: 768px) {
+          flex: 25%;
+          border-right: 1px solid #becdd1;
+        }
+      }
+    }
+
+  }

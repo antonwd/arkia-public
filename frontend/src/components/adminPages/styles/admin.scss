@@ -1,0 +1,176 @@
+.adminMenuBox {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-bottom: 20px;
+
+    a {
+        text-decoration: none;
+        color: #fff;
+        flex: 50%;
+        padding: 5px;
+
+        @media screen and (min-width: 500px) {
+            flex: 33%;
+        }
+
+        @media screen and (min-width: 1366px) {
+            flex: 15%;
+        }
+
+        .adminMenuItem {
+            
+            .item {
+                width: 100%;
+                border-radius: 25px;
+                background: #00c6ff;
+                padding: 15px;
+                cursor: pointer;
+                text-align: center;
+                font-weight: 600;
+                font-size: 12px;
+                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.16);
+
+                @media screen and (min-width: 1600px) {
+                    font-size: 16px;
+                }
+    
+                .icon {
+                    display: block;
+                    font-size: 30px;
+                    line-height: 30px;
+                    
+                    @media screen and (min-width: 1600px) {
+                        font-size: 45px;
+                        line-height: 35px;
+                    }
+                }
+    
+                &:hover {
+                    background: linear-gradient(#00c6ff 0%, #0080a5 100%);
+                }
+            }
+        }
+    }
+}
+
+.officeUpdates {
+    .sendOfficeUpdate {
+        text-align: left;
+        font-size: 20px;
+    }
+
+    .singleUpdateBox {
+        display: flex;
+        flex-direction: row;
+        padding-top: 25px;
+
+        .dateAndActions {
+            display: flex;
+            flex-direction: column;
+            padding-left: 15px;
+
+            .dateString {
+                color: gray;
+                white-space: nowrap;
+            }
+        }
+        .updateBox {
+            .title {
+                font-weight: bold;
+
+                .visibleOnly {
+                    font-weight: normal;
+                    background: #ffeedb;
+                    color: #955b1b;
+                    padding: 2px 5px;
+                    border-radius: 5px;
+                }
+            }
+            .messageContent {
+                padding-top: 15px;
+            }
+        }
+    }
+}
+
+.basic-table {
+    width: 100%;
+    border-collapse: collapse;
+
+    thead td {
+        border-bottom: 1px solid #dbdbdb;
+        font-weight: bold;
+        padding: 0 3px;
+    }
+
+    td {
+        padding: 3px;
+    }
+}
+
+.usersMenu {
+    position: relative;
+
+    li {
+        display: block;
+        padding: 5px;
+        text-decoration: none;
+        color: #0086ae;
+        font-size: 1.2em;
+        cursor: pointer;
+
+        @media screen and (min-width: 1200px) {
+            display: inline-block;
+        }
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.searchBox {
+    padding: 25px 0;
+
+    .searchTitle {
+        font-weight: bold;
+        font-size: 1.2rem;
+    }
+    .searchInput {
+        position: relative;
+        width: 100%;
+    
+        input {
+            position: relative;
+            border: 1px solid #dbdbdb;
+            border-radius: 15px;
+            outline: none;
+            width: 100%;
+            padding: 5px 10px 5px 20px;
+            transition: all 0.35s ease-in-out;
+        }
+    
+        .searchBtn {
+            position: absolute;
+            top: 9px;
+            left: 7px;
+            color: #dbdbdb;
+            transition: all 0.35s ease-in-out;
+        }
+    
+        &:focus-within {
+            input {
+                border-color: #455A72;
+            }
+            .searchBtn {
+                color: #455A72;
+            }
+        }
+    }
+}
+
+.userDetailsForm {
+    padding: 20px 0;
+}

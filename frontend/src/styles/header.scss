@@ -1,0 +1,147 @@
+.mainHeader {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+    width: 100%;
+    // background: #044ea1;
+    //background: linear-gradient(0deg, rgba(4,78,161,1) 0%, rgba(0,149,255,1) 100%);
+    padding: 10px 25px;
+    // box-shadow: 0 0 10px 0 #000;
+    z-index: 101;
+
+    .logo {
+
+        img {
+            width: 120px;
+        }
+
+        @media screen and (min-width: 768px) {
+            display: none;
+        }
+
+    }
+
+    .userBox {
+        color: #455A72;
+        display: flex;
+        flex-direction: column;
+        font-size: 14px;
+        font-weight: 600;
+        border-top: 1px solid #BECDD1;
+        border-bottom: 1px solid #BECDD1;
+        width: 100%;
+        align-items: flex-end;
+        padding: 5px 0;
+
+        @media screen and (min-width: 768px) {
+            flex-direction: row;
+            font-size: 20px;
+            border: none;
+            justify-content: end;
+        }
+
+        .userStatus {
+            position: relative;
+            display: flex;
+            cursor: pointer;
+
+            .icon {
+                color: #A1C68E;
+                padding: 0 10px;
+            }
+
+            .userAction {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                display: none;
+                cursor: pointer;
+                transition: all 0.35s ease-in-out;
+                align-self: flex-end;
+                font-size: 12px;
+                border-top: 2px solid #83cb5f;
+                width: 100%;
+                min-width: 140px;
+                background: #fff;
+                flex-direction: column;
+                border-bottom-left-radius: 20px;
+                border-bottom-right-radius: 20px;
+                box-shadow: 0 3px 5px rgba(0,0,0,0.35);
+
+                a {
+                    text-decoration: none;
+                }
+
+                .action {
+                    display: flex;
+                    flex-direction: row;
+                    color: #607690;
+                    padding: 5px 10px;
+
+                    &:hover {
+                        color: #455A72;
+                    }
+        
+                    .icon {
+                        padding-right: 5px;
+                    }
+
+                    &.logout {
+                        background: #D55656;
+                        color: #fff;
+                        align-items: center;
+                        justify-content: center;
+                        font-weight: bold;
+                        border-bottom-left-radius: 20px;
+                        border-bottom-right-radius: 20px;
+                        .icon {
+                            color: #fff;
+                            padding: 0 5px;
+                        }
+
+                        &:hover {
+                            background: #c91e1e;
+                        }
+                    }
+                }
+    
+    
+                @media screen and (min-width: 768px) {
+                    font-size: 20px;
+                    min-width: 250px;
+                }
+
+            }
+
+
+            &:hover {
+                color: #A1C68E;
+
+                .userName {
+                    transition: all 0.3s ease-in-out;
+                    svg {
+                        animation: animateArrow 0.75s infinite ease-in-out ;
+                    }
+
+                    @keyframes animateArrow {
+                        0% { transform: translateY(0); }
+                        50% { transform: translateY(15%); }
+                    }
+                    .userAction {
+                        z-index: 100;
+                        svg {
+                            animation: none;
+                        }
+                    }
+                }
+
+                .userAction {
+                    display: flex;
+                }
+            }
+        }
+
+        
+    }
+}

@@ -1,0 +1,61 @@
+.contactBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+    width: 100%;
+
+    .conctactsList {
+        max-height: 250px;
+        overflow-y: scroll;
+        width: 100%;
+
+        @media screen and (min-width: 768px) {
+            max-height: 500px;
+        }
+    }
+
+    &:last-child {
+        margin-top: 30px;
+    }
+    
+    .title {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+
+        .titleText {
+            font-weight: 500;
+            font-size: 16px;
+            color: #455a72;
+        }
+    }
+
+    .contactLine {
+        display: flex;
+        width: 100%;
+        color: #455a72;
+        padding: 2px 0;
+
+        .name {
+            flex: 1;
+            text-align: right;
+        }
+        .number {
+            padding: 0;
+        }
+        .options {
+            padding-right: 10px;
+        }
+
+        .number a, .options a {
+            text-decoration: none;
+            color: #455a72;
+
+            &:hover {
+                color: #6e7275;
+            }
+        }
+    }
+}

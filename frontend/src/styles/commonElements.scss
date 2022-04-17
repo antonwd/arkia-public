@@ -1,0 +1,267 @@
+.confirmedAnimation {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 50px;
+
+    .message {
+        color: #7ac142;
+        text-align: center;
+        opacity: 0;
+        animation: messageAppear 0.5s ease-in-out 0.75s forwards;
+    }
+
+    .checkmark__circle {
+        stroke-dasharray: 166;
+        stroke-dashoffset: 166;
+        stroke-width: 2;
+        stroke-miterlimit: 10;
+        stroke: #7ac142;
+        fill: none;
+        animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards
+    }
+    
+    .checkmark {
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        display: block;
+        stroke-width: 2;
+        stroke: #fff;
+        stroke-miterlimit: 10;
+        margin: 10% auto;
+        box-shadow: inset 0px 0px 0px #7ac142;
+        animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both
+    }
+    
+    .checkmark__check {
+        transform-origin: 50% 50%;
+        stroke-dasharray: 48;
+        stroke-dashoffset: 48;
+        animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards
+    }
+    
+    @keyframes stroke {
+        100% {
+            stroke-dashoffset: 0
+        }
+    }
+    
+    @keyframes scale {
+    
+        0%,
+        100% {
+            transform: none
+        }
+    
+        50% {
+            transform: scale3d(1.1, 1.1, 1)
+        }
+    }
+    
+    @keyframes fill {
+        100% {
+            box-shadow: inset 0px 0px 0px 30px #7ac142
+        }
+    }
+
+    @keyframes messageAppear {
+        0% {
+            transform: scale(0.5);
+            opacity: 0;
+        }
+        75% {
+            transform: scale(1.2);
+        }
+        100% {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    display: flex;
+        align-items: center;
+        justify-content: center;
+
+    .modalBg {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: #455a72;
+        opacity: 0.3;
+    }
+
+    .confirmModal {
+        width: 100%;
+        max-width: 700px;
+        background: #fff;
+        box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.25);
+        padding: 15px 25px;
+        z-index: 1;
+
+        @media screen and (min-width: 768px) {
+            border-radius: 20px;
+        }
+
+        .title {
+            font-weight: 700;
+            font-size: 16px;
+            color: #0043C1;
+            width: 100%;
+            border-bottom: 1px solid #0043C1;
+
+            @media screen and (min-width: 1366px) {
+                font-size: 22px;
+            }
+        }
+
+        .message {
+            padding-top: 15px;
+            font-size: 12px;
+            color: #455A72;
+
+            @media screen and (min-width: 1366px) {
+                font-size: 14px;
+            }
+
+            .redInfo {
+                color: #D55656;
+                font-weight: bold;
+                padding: 10px 0;
+            }
+        }
+
+        .buttons {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            
+            button {
+                background: #65BBDB;
+                color: #fff;
+                padding: 10px 25px;
+                font-size: 18px;
+                line-height: 35px;
+                font-weight: bold;
+                border: none;
+                border-radius: 10px;
+                text-align: center;
+                cursor: pointer;
+                transition: all 0.35s ease-in-out;
+                margin-right: 10px;
+            }
+
+            .confirm {
+                padding: 5px 15px;
+                border-radius: 15px;
+                &:hover {
+                    background: #218CB4;
+                }
+            }
+
+            .decline {
+                padding: 5px 15px;
+                border-radius: 15px;
+                background: #D55656;
+                color: #fff;
+                &:hover {
+                    background: #B13737;
+                }
+            }
+        }
+    }
+}
+
+.selectList {
+    position: relative;
+    .titleOptions {
+        color: #becdd1;
+        cursor: pointer;
+
+        .downIcon {
+            padding: 0 5px;
+        }
+
+        &:hover {
+            color: #607690;
+        }
+    }
+    .optionsList {
+        display: block;
+        position: absolute;
+        width: 100%;
+        min-width: 150px;
+        left: 0;
+        background: #fff;
+        border-right: 3px solid #607690;
+        padding: 10px 15px;
+        box-shadow: 2px 2px 5px rgba(160, 160, 160, 0.35);
+
+        &.hidden {display: none;}
+
+        .optionLine {
+            position: relative;
+            cursor: pointer;
+            color: #607690;
+            text-align: right;
+
+            &:hover {
+                color: #39b0d0;
+            }
+        }
+    }
+
+}
+
+.notificationBox {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 20px;
+
+    .message {
+        width: 100%;
+        padding: 7px 15px;
+        font-size: 12px;
+        font-weight: bold;
+        border-radius: 15px;
+        margin: 5px 0 0;
+
+        &.alert {
+            background: #ffdbdb;
+            color: #aa2c2c;
+        }
+
+        &.approved {
+            background: #eaffdb;
+            color: #3b6c18;
+        }
+
+        &.notice {
+            background: #ffeedb;
+            color: #955b1b;
+        }
+    }
+
+}
+
+.innerActionLink {
+    position: relative;
+    font-weight: bold;
+    color: #0043C1;
+    cursor: pointer;
+
+    &:hover {
+        color: #39b0d0;
+    }
+}

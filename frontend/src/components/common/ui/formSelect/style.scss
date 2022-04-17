@@ -1,0 +1,91 @@
+.formSelect {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    flex: 1;
+    cursor: pointer;
+
+    .selectHeader {
+        position: absolute;
+        font-weight: bold;
+        color: #becdd1;
+        transition: all 0.25s ease;
+        pointer-events: none;
+        top: -10px;
+        right: 5px;
+        font-size: 10px;
+    }
+
+    &:focus-within {
+        .selectHeader {
+            color: #4a7581;
+        }
+    }
+
+    input {
+        width: 100%;
+        border: none;
+        border-bottom: 1px solid #000;
+        padding: 5px;
+        padding-left: 25px;
+        cursor: pointer;
+
+        &:focus {
+            outline: none;
+            border-bottom: 1px solid #0043C1;
+            color: #0043C1;
+        }
+
+        &.hiddenInput {
+            display: none;
+        }
+    }
+
+    .selectArrow {
+        position: absolute;
+        left: 3px;
+        top: 5px;
+        cursor: pointer;
+        color: #dfdfdf;
+    }
+
+    .selectOptions {
+        display: block;
+        position: absolute;
+        width: 100%;
+        min-width: 150px;
+        left: 0;
+        top: 100%;
+        background: #fff;
+        border-right: 3px solid #607690;
+        padding: 10px 15px;
+        box-shadow: 2px 2px 5px rgba(160, 160, 160, 0.35);
+        z-index: 10;
+
+        .optionLine {
+            position: relative;
+            cursor: pointer;
+            color: #607690;
+            text-align: right;
+
+            &:hover {
+                color: #39b0d0;
+            }
+        }
+    }
+
+    &:hover {
+        @keyframes animateArrow {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(15%); }
+        }
+        .selectArrow {
+            color: #607690;
+            animation: animateArrow 0.75s infinite ease-in-out;
+
+            &.noAnimation {
+                animation: none;
+            }
+        }
+    }
+}

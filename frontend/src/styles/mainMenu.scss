@@ -1,0 +1,93 @@
+.mainMenu {
+    height: 100%;
+    position: relative;
+
+    .logo {
+        width: 100%;
+        text-align: center;
+        padding: 25px 30px;
+
+        img {
+            width: 120px;
+        }
+    }
+
+    .mobileMenuIcon {
+        padding: 15px;
+        text-align: right;
+        .openedMobile {
+            padding: 0 3px;
+        }
+    }
+
+    .menuItems {
+        a {
+            text-decoration: none;
+
+            &.activeLink {
+                .menuItem {
+                    background: linear-gradient(90deg, #fafeff 0%, #edfbff 66.5%, #c6f2fd 100%);
+                    color: #39b0d0;
+
+                    .icon {
+                            transform: scale(1.2);
+                    }
+                }
+            }
+        }
+        .menuItem {
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: center;
+            justify-content: flex-start;
+            color: #a0a0a0;
+            cursor: pointer;
+            background: none;
+            transition: all 0.35s ease-in-out;
+
+            &.menuCategory {
+                font-weight: 500;
+                font-size: 16px;
+                text-align: right;
+                color: #455a72;
+                padding-top: 25px;
+                padding-right: 8px;
+                background: none;
+                cursor: default;
+
+                &:hover {
+                    background: none;
+                    color: #455a72;
+                }
+            }
+
+            .icon {
+                padding: 5px 10px;
+                width: 38px;
+                transition: all 0.25s ease-in-out;
+
+                @media screen and (min-width: 1366px) {
+                    width: 55px;
+                }
+            }
+
+            .menuItemText {
+                white-space: nowrap;
+                padding-left: 20px;
+            }
+
+            &:hover {
+                background: linear-gradient(90deg, #fafeff 0%, #edfbff 66.5%, #c6f2fd 100%);
+                color: #39b0d0;
+
+                .icon {
+                        transform: scale(1.2);
+                }
+            }
+
+            @media screen and (min-width: 1366px) {
+                font-size: 20px;
+            }
+        }
+    }
+}
